@@ -50,8 +50,9 @@ logger.log("[browser] Loading...")
 const browser = await puppeteer.launch({
 	headless: true,
 	args: [
-		"--no-zygote",
-		"--no-sandbox"
+		"--no-sandbox",
+		"--disable-setuid-sandbox",
+		"--ignore-certificate-errors"
 	]
 })
 
