@@ -52,6 +52,16 @@ class Source extends Queueable {
 
 	async load() {
 		try {
+			this._page = await this.engine.browser.newPage()
+			await this.page.setViewport({ width: 1920, height: 1080 })
+			await this.page.setRequestInterception(true)
+			this.page.on('request', (request) => {
+				if(request.resourceType() == 'stylesheet' || request.resourceType() == 'font' || request.resourceType() == 'image'){
+					request.abort()
+				} else {
+					request.continue()
+				}
+			})
 			await this.load_()
 			this._loaded = true
 		} catch(ex) {

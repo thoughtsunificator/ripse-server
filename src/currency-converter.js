@@ -23,6 +23,7 @@ class CurrencyConverter {
 	async load(from, to) {
 		try {
 			this._page = await this.browser.newPage()
+			await this.page.setViewport({ width: 1920, height: 1080 })
 			await this.page.setRequestInterception(true)
 			this.page.on('request', (req) => {
 				if(req.resourceType() == 'stylesheet' || req.resourceType() == 'font' || req.resourceType() == 'image'){

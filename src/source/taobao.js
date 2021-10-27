@@ -18,15 +18,6 @@ class Taobao extends Source {
 	}
 
 	async load_() {
-		this._page = await this.engine.browser.newPage()
-		await this.page.setRequestInterception(true)
-		this.page.on('request', (request) => {
-			if(request.resourceType() == 'stylesheet' || request.resourceType() == 'font' || request.resourceType() == 'image'){
-				request.abort()
-			} else {
-				request.continue()
-			}
-		})
 		await this.page.goto(`https://www.google.com/search?q=site:taobao.com&tbm=isch`)
 		await this.page.waitForXPath("/html/body/c-wiz/div/header/div[2]/div/div[1]/form/div[1]/div[2]/div/div[3]/div/span")
 	}

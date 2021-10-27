@@ -18,15 +18,6 @@ class _1688 extends Source {
 	}
 
 	async load_() {
-		this._page = await this.engine.browser.newPage()
-		await this.page.setRequestInterception(true)
-		this.page.on('request', (request) => {
-			if(request.resourceType() == 'stylesheet' || request.resourceType() == 'font' || request.resourceType() == 'image'){
-				request.abort()
-			} else {
-				request.continue()
-			}
-		})
 		await this.page.goto(`https://s.1688.com/youyuan/index.htm`)
 		await this.page.waitForSelector('.space-image-upload input[type="file"]')
 	}
