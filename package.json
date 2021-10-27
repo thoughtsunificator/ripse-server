@@ -8,13 +8,14 @@
 	"bugs": {
 		"url": "https://github.com/thoughtsunificator/ripse-server/issues"
 	},
-	"author": "Romain Lebesle <oss@thoughtsunificator.me> (https://thoughtsunificator.me)",
+	"author": "Romain Lebesle <job@thoughtsunificator.me> (https://thoughtsunificator.me)",
 	"license": "MIT",
 	"scripts": {
 		"start": "forever server.js",
 		"dev": "nodemon server.js"
 	},
 	"dependencies": {
+		"@thoughtsunificator/config-env": "^1.0.3",
 		"cors": "^2.8.5",
 		"express": "^4.17.1",
 		"forever": "^4.0.1",
@@ -28,7 +29,6 @@
 	"engines": {
 		"node": ">= 15.0.0"
 	},
-	"author": "Romain Lebesle <job@thoughtsunificator.me> (https://thoughtsunificator.me)",
 	"devDependencies": {
 		"nodemon": "^2.0.14"
 	}

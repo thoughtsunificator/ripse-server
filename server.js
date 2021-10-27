@@ -8,8 +8,7 @@ import WS from "ws"
 import tracer from "tracer"
 import express from "express"
 import cors from "cors"
-
-import config from "./lib/config.js"
+import config from "@thoughtsunificator/config-env"
 
 import CurrencyConverter from "./src/currency-converter.js"
 import Engine from "./src/engine.js"
