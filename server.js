@@ -35,7 +35,7 @@ const logger = tracer.dailyfile({
 })
 
 const rateLimiter = new RateLimiterMemory({
-	points: 5,
+	points: 15,
 	duration: 2,
 })
 
