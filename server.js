@@ -84,8 +84,6 @@ app.get("/currency-rate", function (req, res) {
 	res.json(currencyConverter.rate)
 })
 
-app.use("*", (req, res) => res.connection.destroy())
-
 const server = app.listen(config.PORT, function () {
 	logger.info(`Ready and listening on ${config.PORT}`)
 })
